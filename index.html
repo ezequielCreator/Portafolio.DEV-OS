@@ -46,6 +46,12 @@
     display: block;
     margin: 1rem 0;
   }
+  #skills{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
   #skills p{
     text-align: left;
     margin: 0.8 rem 0;
@@ -89,29 +95,29 @@ footer{
   <!-- NIVEL 2: DESKTOP -->
   <section id="desktop">
     <div>
-      <h1>> Proyectos/</h1>
+      <h1>> Projects /</h1>
       <br>
     </div>
     <div class ="proyecto-ventana">     
       <div class="proyecto" onclick="alert('Abriendo un sitio externo')">
         <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/" style="color: #00ff41;">[1] braseiro sal e parrila [ONLINE] </a>
       </div>
-      <img src="assets/Braseiro.png">
+      <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/"> <img src="assets/Braseiro.png"></a>
       <br>
       <div class="proyecto">
         <a href="https://assadaoemarmitas.vercel.app/" style="color: #00ff41;"> [2] Assadaõ & Marmitas [EN DESARROLLO]</a>
      </div>
-     <img src="assets/Assadao.png">
+     <a href="https://assadaoemarmitas.vercel.app/">  <img src="assets/Assadao.png"></a>
      <br>
      <div class="proyecto">
         <a href="https://omega-mu-three.vercel.app/" style="color: #00ff41;"> [3] Omega Moda Masculina[ONLINE]</a>
      </div>
-     <img src="assets/Omega.png">
+     <a href="https://omega-mu-three.vercel.app/"></a> <img src="assets/Omega.png"></a>
      <br>
      <div class="proyecto">
         <a href="https://ezequielcreator.github.io/tabla-de-tareas/" style="color: #00ff41;"> [4] Tabla de tareas [ONLINE]</a>
      </div>
-     <img src="assets/tabla_de_tareas.png">
+     <a href="https://ezequielcreator.github.io/tabla-de-tareas/"><img src="assets/tabla_de_tareas.png"></a>
      <br>
     </div>
     <br>
@@ -120,12 +126,12 @@ footer{
   </section>
   <!-- NIVEL 3: skills-->
   <section id="skills">
-  <h1>> skills --list</h1>
+  <h1> > skills --list</h1>
   <p>[██████████] 100% HTML/CSS</p>
   <p>[████████░░] 80% JavaScript</p>
   <p>[██████░░░░] 60% React</p>
   <p>[██████████] 100% Terminal UI</p>
-  <p>[██████████] 100% Trabajo en equipo.</p>
+  <p>[█████] 50% Python.</p>
 </section>
     </div>
   </section>
@@ -174,7 +180,7 @@ footer{
     // 1. EFECTO ESCRITURA
     new Typed('#typed', {
       strings: [
-        '> Cargando DEV_OS v1.0...^1000\n> Usuario: EzequielCreator^1000\n> Contraseña: ********^1000\n> Acceso concedido.^1000\nBienvenido. Haz scroll para continuar'
+        '> Loading DEV_OS v1.0...^1000\n> User: EzequielCreator^1000\n> Password: ********^1000\n> Access granted.^1000\nWelcome. scroll for continue '
       ],
       typeSpeed: 40,
       showCursor: true,
