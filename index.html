@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Ezequiel — Desarrollador web especializado en e-commerce y landing pages de alta conversión.">
   <title>DEV_OS v1.0</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -17,71 +19,110 @@
       margin: 0;
       overflow-x: hidden;
     }
-    section{ min-height: 100vh; padding: 2rem; display: flex; align-items: center; }
+    section { min-height: 100vh; padding: 2rem; display: flex; align-items: center; }
     #boot { justify-content: center; font-size: 1.2rem; text-align: center; }
-    #desktop, #contacto { opacity: 0; } /* Empiezan ocultos */
-   .proyecto { color: var(--acento); cursor: pointer; margin: 1rem 0; }
-   .whatsapp-btn {
+
+    /* Empiezan ocultos y GSAP los revela al hacer scroll.
+       Si JS no carga, el <noscript> de abajo los fuerza a ser visibles. */
+    #desktop, #skills, #about, #contacto { opacity: 0; }
+
+    .whatsapp-btn {
       position: fixed; bottom: 20px; right: 20px;
       background: var(--acento); color: black; padding: 12px 20px;
       border-radius: 8px; text-decoration: none; font-weight: bold;
+      z-index: 10;
     }
-    #typed{
+    .proyecto {
+      color: var(--acento);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .proyecto h3 {
+      color: var(--acento);
+      margin-bottom: 15px;
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+    .proyecto-ventana {
+      width: 100%;
+    }
+    .proyecto img {
+      width: 100%;
+      max-width: clamp(260px, 40vw, 420px);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid var(--texto);
+      display: block;
+      margin: 1rem auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .proyecto img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .proyecto img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 25px var(--acento);
+    }
+    @media (max-width: 640px) {
+      .proyecto img { max-width: 90vw; }
+    }
+    .skills-usadas {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    #typed {
       display: inline-block;
       min-width: 0;
       max-width: 90%;
       white-space: pre-line;
     }
-    .glitch:hover{
+    .glitch:hover {
       text-shadow: 2px 0 red, -2px 0 blue;
     }
-   img{
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid var(--texto);
-    display: block;
-    margin: 1rem 0;
-  }
-  #skills{
-    display:flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
-  #skills p{
-    text-align: left;
-    margin: 0.8 rem 0;
-    color: var(--acento)
-  }
-.glitch-box {
-  text-align: left; 
-  margin-top: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.glitch-box p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 1.5rem 0;
-  color: var(--texto);
-}
-
-/* Los que tienen glitch se centran */
-.glitch-box p.glitch {
-  text-align: center;
-  font-size: 1.3rem;
-  color: var(--acento);
-  font-weight: bold;
-}
-footer{
-  text-align:  center;
-  margin-bottom: 50px;
-}
+    #skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #skills-list p {
+      text-align: left;
+      margin: 0.8rem 0;
+      color: var(--acento);
+    }
+    .glitch-box {
+      text-align: left;
+      margin-top: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .glitch-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 1.5rem 0;
+      color: var(--texto);
+    }
+    .glitch-box p.glitch {
+      text-align: center;
+      font-size: 1.3rem;
+      color: var(--acento);
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding-bottom: 90px;
+    }
+    a { color: inherit; }
   </style>
 </head>
 <body class="terminal">
@@ -93,91 +134,108 @@ footer{
 
   <!-- NIVEL 2: DESKTOP -->
   <section id="desktop">
-    <div>
-      <h1>> Projects /</h1>
-      <br>
-    </div>
-    <div class ="proyecto-ventana">     
-      <div class="proyecto" onclick="alert('Abriendo un sitio externo')">
-        <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/" style="color: #00ff41;">[1] braseiro sal e parrila [EN DESARROLLO] </a>
-      </div>
-      <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/"> <img src="assets/Braseiro.png"></a>
-      <br>
-      <div class="proyecto">
-       <div class="proyecto" onclick="alert('Abriendo un sitio externo')">
-        <a href="https://assadaoemarmitas.vercel.app/" style="color: #00ff41;"> [2] Assadaõ & Marmitas [ONLINE]</a>
-     </div>
-     <a href="https://assadaoemarmitas.vercel.app/">  <img src="assets/Assadao.png"></a>
-     <br>
-     <div class="proyecto">
-      <div class="proyecto" onclick="alert('Abriendo un sitio externo')">
-        <a href="https://omega-mu-three.vercel.app/" style="color: #00ff41;"> [3] Omega Moda Masculina[ONLINE]</a>
-     </div>
-     <a href="https://omega-mu-three.vercel.app/"></a> <img src="assets/Omega.png"></a>
-     <br>
-     <div class="proyecto">
-      <div class="proyecto" onclick="alert('Abriendo un sitio externo')">
-        <a href="https://ezequielcreator.github.io/tabla-de-tareas/" style="color: #00ff41;"> [4] Tabla de tareas [ONLINE]</a>
-     </div>
-     <a href="https://ezequielcreator.github.io/tabla-de-tareas/"><img src="assets/tabla_de_tareas.png"></a>
-     <br>
-    </div>
-    <br>
-    <br>
-    <br>
-  </section>
-  <!-- NIVEL 3: skills-->
-  <section id="skills">
-  <h1> > skills --list</h1>
-  <p>[██████████] 100% HTML/CSS</p>
-  <p>[████████░░] 80% JavaScript</p>
-  <p>[██████░░░░] 60% React</p>
-  <p>[██████████] 100% Terminal UI</p>
-  <p>[█████] 50% Python.</p>
-</section>
-    </div>
-  </section>
-  <!-- NIVEL 4: ABOUT -->
-<section id="about">
-  <h1>> about --me</h1>
-  <div class="glitch-box">
-    <p class="glitch" data-text="Soy Ezequiel, DEV OS">
-      Soy Ezequiel, DEV OS
-    </p>
-    <p class="glitch" data-text="Construyo webs que venden en piloto automatico">
-      Construyo webs que venden en piloto automatico
-    </p>
-    <p class="glitch" data-text="Especialista en e-comerce"> Especialista en e-comerce</p>
-    <br>
-    <p>Mi nombre es Ezequiel y llevo 1 año convirtiendo lineas de codigo en dinero real para negocios.
-      No creo paginas web bonitas que nadie visita. Creo maquinas de ventas que trabajan 24/7. 
-    </p>
-    <p>Mi especialidad es e-comerce y landing de alta conversión.
-      He trabajado con marcas como Omega Moda Masculina y proyectos gastronómicos como Assadaõ & Marmitas, entre otros... 
-      Mi stack: HTML, CSS, JavaScript, React. Pero mi verdadera herramienta es entender tu negocio.
-    </p>
-    <p>
-      Creo en 3 cosas: código limpio, diseño que convierte, y entrega rápida.
-      Si tu web tarda nas de 3 segundos en cargar, ya perdiste una venta.Si no tiene un boton de whatsApp visible estas perdiendo publico.
-    </p>
+    <div style="width:100%;">
+      <h1>&gt; Projects /</h1>
 
-</section>
-  <!--NIVEL: :  CONTACTO-->
+      <div class="proyecto-ventana">
+        <div class="proyecto">
+          <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/" target="_blank" rel="noopener">
+            <h3>[1] braseiro sal e parrila [ONLINE]</h3>
+            <img src="assets/Braseiro.png" alt="Captura del sitio Braseiro Sal e Parrila">
+          </a>
+        </div>
+        <p class="skills-usadas">Skills usadas: HTML5, CSS3, JavaScript ES6, Responsive Design, WhatsApp API, SEO.</p>
+
+        <div class="proyecto">
+          <a href="https://assadaoemarmitas.vercel.app/" target="_blank" rel="noopener">
+            <h3>[2] Assadaõ &amp; Marmitas [ONLINE]</h3>
+            <img src="assets/Assadao.png" alt="Captura del sitio Assadaõ & Marmitas">
+          </a>
+        </div>
+        <p class="skills-usadas">Skills usadas: HTML5, CSS3, JavaScript, Responsive Design, UI/UX, Vercel Deploy, SEO básico, WhatsApp integration, Performance Optimization.</p>
+
+        <div class="proyecto">
+          <a href="https://omega-mu-three.vercel.app/" target="_blank" rel="noopener">
+            <h3>[3] Omega Moda Masculina [ONLINE]</h3>
+            <img src="assets/Omega.png" alt="Captura del sitio Omega Moda Masculina">
+          </a>
+        </div>
+        <p class="skills-usadas">Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.</p>
+
+        <div class="proyecto">
+          <a href="https://ezequielcreator.github.io/tabla-de-tareas/" target="_blank" rel="noopener">
+            <h3>[4] Tabla de tareas [ONLINE]</h3>
+            <img src="assets/tabla_de_tareas.png" alt="Captura de la app Tabla de tareas">
+          </a>
+        </div>
+        <p class="skills-usadas">Skills usadas: HTML5, CSS3, JavaScript ES6, DOM Manipulation, LocalStorage, CRUD, Responsive Design, GitHub Pages, UI/UX.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIVEL 3: SKILLS -->
+  <section id="skills">
+    <div id="skills-list">
+      <h1>&gt; skills --list</h1>
+      <p>[██████████] 100% HTML/CSS</p>
+      <p>[███████░░░] 80% JavaScript</p>
+      <p>[█████░░░░░] 50% React</p>
+      <p>[██████████] 100% Terminal UI</p>
+      <p>[█████░░░░░] 50% Python</p>
+    </div>
+  </section>
+
+  <!-- NIVEL 4: ABOUT -->
+  <section id="about">
+    <div class="glitch-box">
+      <h1>&gt; about --me</h1>
+      <p class="glitch">Soy Ezequiel, DEV OS</p>
+      <p class="glitch">Construyo webs que venden en piloto automático</p>
+      <p class="glitch">Especialista en e-commerce</p>
+
+      <p>Mi nombre es Ezequiel y llevo 1 año convirtiendo líneas de código en dinero real para negocios.
+        No creo páginas web bonitas que nadie visita. Creo máquinas de ventas que trabajan 24/7.
+      </p>
+      <p>Mi especialidad es e-commerce y landings de alta conversión.
+        He trabajado con marcas como Omega Moda Masculina y proyectos gastronómicos como Assadaõ & Marmitas, entre otros.
+        Mi stack: HTML, CSS, JavaScript, React. Pero mi verdadera herramienta es entender tu negocio.
+      </p>
+      <p>
+        Creo en 3 cosas: código limpio, diseño que convierte, y entrega rápida.
+        Si tu web tarda más de 3 segundos en cargar, ya perdiste una venta. Si no tiene un botón de WhatsApp visible, también.
+      </p>
+    </div>
+  </section>
+
+  <!-- NIVEL 5: CONTACTO -->
   <section id="contacto">
     <div>
-      <h1>> contacto --iniciar</h1>
+      <h1>&gt; contacto --iniciar</h1>
       <p>Estableciendo conexión segura... [██████████] 100%</p>
-      <p>Usa: /<a href="https://wa.me//47996831255">whatsapp</a> /<a></a>email / <a href="https://github.com/ezequielCreator">github</a></p>
+      <p>
+        Usa: /<a href="https://wa.me/5547996831255" target="_blank" rel="noopener">whatsapp</a>
+        /<a href="mailto:TU-EMAIL-AQUI@ejemplo.com">email</a>
+        /<a href="https://github.com/ezequielCreator" target="_blank" rel="noopener">github</a>
+      </p>
     </div>
   </section>
 
-  <a href="https://wa.me/5547996831255" class="whatsapp-btn" target="_blank">CONTRATAR POR WHATSAPP</a>
+  <a href="https://wa.me/5547996831255" class="whatsapp-btn" target="_blank" rel="noopener">CONTRATAR POR WHATSAPP</a>
+
+  <!-- Si JS no carga, esto fuerza que todo el contenido sea visible igual -->
+  <noscript>
+    <style>
+      #desktop, #skills, #about, #contacto { opacity: 1 !important; }
+      .proyecto img { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+
+  <footer>&copy; <strong><em>Portafolio Dev.OS 2026. Todos los derechos reservados.</em></strong></footer>
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script>
     // 1. EFECTO ESCRITURA
     new Typed('#typed', {
@@ -189,19 +247,32 @@ footer{
       cursorChar: '_'
     });
 
-    // 2. ANIMACIÓN SCROLL CON GSAP
-    gsap.registerPlugin(ScrollTrigger);
+    // 2. ANIMACIÓN SCROLL CON GSAP (secciones completas)
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      ['#desktop', '#skills', '#about', '#contacto'].forEach(function (id) {
+        gsap.to(id, {
+          opacity: 1,
+          scrollTrigger: { trigger: id, start: 'top 80%' }
+        });
+      });
+    }
 
-    gsap.to("#desktop", {
-      opacity: 1,
-      scrollTrigger: { trigger: "#desktop", start: "top 80%" }
-    });
-
-    gsap.to("#contacto", {
-      opacity: 1,
-      scrollTrigger: { trigger: "#contacto", start: "top 80%" }
-    });
+    // 3. ANIMACIÓN DE ENTRADA POR IMAGEN (aparecen una a una al hacer scroll)
+    var imgs = document.querySelectorAll('.proyecto img');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      imgs.forEach(function (img) { observer.observe(img); });
+    } else {
+      imgs.forEach(function (img) { img.classList.add('visible'); });
+    }
   </script>
-  <footer> &copy; <strong> <em>Portafolio Dev.OS 2026. Todos los derechos reservados.</em></strong> </footer>
 </body>
-</html>
+</html>   
