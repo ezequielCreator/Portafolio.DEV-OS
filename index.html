@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Ezequiel — Desarrollador web especializado en e-commerce y landing pages de alta conversión.">
+  <title>DEV_OS v1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fondo: #0a0a0a;
+      --texto: #00ff41;
+      --acento: #D4AF37;
+    }
+    body {
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: 'Fira Code', monospace;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    section { min-height: 100vh; padding: 2rem; display: flex; align-items: center; }
+    #boot { justify-content: center; font-size: 1.2rem; text-align: center; }
+    #desktop, #skills, #about, #contacto { opacity: 0; }
+    .whatsapp-btn {
+      position: fixed; bottom: 20px; right: 20px;
+      background: var(--acento); color: black; padding: 12px 20px;
+      border-radius: 8px; text-decoration: none; font-weight: bold;
+      z-index: 10;
+    }
+    /* Switcher de idioma */
+    .lang-switcher {
+      position: fixed; bottom: 20px; left: 20px;
+      display: flex; gap: 6px; background: #111; padding: 6px;
+      border: 1px solid var(--texto); border-radius: 999px; z-index: 20;
+    }
+    .lang-switcher button {
+      background: transparent; color: #fff; border: none;
+      border-radius: 999px; padding: 6px 10px; cursor: pointer;
+      font-family: inherit; font-size: 0.85rem;
+    }
+    .lang-switcher button.active { background: #fff; color: #000; font-weight: bold; }
+    .proyecto { color: var(--acento); margin-bottom: 1rem; text-align: center; }
+    .proyecto h3 { color: var(--acento); margin-bottom: 15px; font-family: monospace; font-size: 1.1rem; }
+    .proyecto-ventana { width: 100%; }
+    .proyecto img {
+      width: 100%; max-width: clamp(260px, 40vw, 420px); aspect-ratio: 16 / 9;
+      object-fit: cover; border-radius: 10px; border: 2px solid var(--texto);
+      display: block; margin: 1rem auto; opacity: 0; transform: translateY(30px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .proyecto img.visible { opacity: 1; transform: translateY(0); }
+    .proyecto img:hover { transform: scale(1.04); box-shadow: 0 0 25px var(--acento); }
+    @media (max-width: 640px) { .proyecto img { max-width: 90vw; } }
+    .skills-usadas { text-align: center; max-width: 600px; margin: 0 auto 3rem auto; font-size: 0.9rem; opacity: 0.85; }
+    #typed { display: inline-block; min-width: 0; max-width: 90%; white-space: pre-line; }
+    .glitch:hover { text-shadow: 2px 0 red, -2px 0 blue; }
+    #skills-list { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; max-width: 800px; margin: 0 auto; }
+    #skills-list p { text-align: left; margin: 0.8rem 0; color: var(--acento); }
+    .glitch-box { text-align: left; margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .glitch-box p { font-size: 1.1rem; line-height: 1.8; margin: 1.5rem 0; color: var(--texto); }
+    .glitch-box p.glitch { text-align: center; font-size: 1.3rem; color: var(--acento); font-weight: bold; }
+    footer { text-align: center; padding-bottom: 90px; }
+    a { color: inherit; }
+  </style>
+</head>
+<body class="terminal">
+
+  <section id="boot"><span id="typed"></span></section>
+
+  <section id="desktop">
+    <div style="width:100%;">
+      <h1 data-i18n="projects_title">&gt; Projects /</h1>
+
+      <div class="proyecto-ventana">
+        <div class="proyecto">
+          <a href="https://ezequielcreator.github.io/Braseiro_sal_e_Parrila/" target="_blank" rel="noopener">
+            <h3>[1] braseiro sal e parrila [ONLINE]</h3>
+            <img src="assets/Braseiro.png" alt="Captura del sitio Braseiro Sal e Parrila">
+          </a>
+        </div>
+        <p class="skills-usadas" data-i18n="skills_1">Skills usadas: HTML5, CSS3, JavaScript ES6, Responsive Design, WhatsApp API, SEO.</p>
+
+        <div class="proyecto">
+          <a href="https://assadaoemarmitas.vercel.app/" target="_blank" rel="noopener">
+            <h3>[2] Assadaõ &amp; Marmitas [ONLINE]</h3>
+            <img src="assets/Assadao.png" alt="Captura del sitio Assadaõ & Marmitas">
+          </a>
+        </div>
+        <p class="skills-usadas" data-i18n="skills_2">Skills usadas: HTML5, CSS3, JavaScript, Responsive Design, UI/UX, Vercel Deploy, SEO básico, WhatsApp integration, Performance Optimization.</p>
+
+        <div class="proyecto">
+          <a href="https://omega-mu-three.vercel.app/" target="_blank" rel="noopener">
+            <h3>[3] Omega Moda Masculina [ONLINE]</h3>
+            <img src="assets/Omega.png" alt="Captura del sitio Omega Moda Masculina">
+          </a>
+        </div>
+        <p class="skills-usadas" data-i18n="skills_3">Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.</p>
+        
+        <div class="proyecto">
+          <a href="https://techstore-beige-eight.vercel.app/" target="_blank" rel="noopener">
+            <h3>[4] Tech Store [ONLINE]</h3>
+            <img src="assets/TechStore.png" alt="Captura del sitio Tech Store">
+          </a>
+        </div>
+        <p class="skills-usadas" data-i18n="skills_4">Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.</p>
+
+        <div class="proyecto">
+          <a href="https://ezequielcreator.github.io/tabla-de-tareas/" target="_blank" rel="noopener">
+            <h3>[5] Tabla de tareas [ONLINE]</h3>
+            <img src="assets/tabla_de_tareas.png" alt="Captura de la app Tabla de tareas">
+          </a>
+        </div>
+        <p class="skills-usadas" data-i18n="skills_5">Skills usadas: HTML5, CSS3, JavaScript ES6, DOM Manipulation, LocalStorage, CRUD, Responsive Design, GitHub Pages, UI/UX.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div id="skills-list">
+      <h1 data-i18n="skills_title">&gt; skills --list</h1>
+      <p>[██████████] 100% HTML/CSS</p>
+      <p>[███████░░░] 80% JavaScript</p>
+      <p>[█████░░░░░] 50% React</p>
+      <p>[██████████] 100% Terminal UI</p>
+      <p>[█████░░░░░] 50% Python</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="glitch-box">
+      <h1 data-i18n="about_title">&gt; about --me</h1>
+      <p class="glitch" data-i18n="about_1">Soy Ezequiel, DEV OS</p>
+      <p class="glitch" data-i18n="about_2">Construyo webs que venden en piloto automático</p>
+      <p class="glitch" data-i18n="about_3">Especialista en e-commerce</p>
+      <p data-i18n="about_p1">Mi nombre es Ezequiel y llevo 1 año convirtiendo líneas de código en dinero real para negocios. No creo páginas web bonitas que nadie visita. Creo máquinas de ventas que trabajan 24/7.</p>
+      <p data-i18n="about_p2">Mi especialidad es e-commerce y landings de alta conversión. He trabajado con marcas como Omega Moda Masculina y proyectos gastronómicos como Assadaõ & Marmitas, entre otros. Mi stack: HTML, CSS, JavaScript, React. Pero mi verdadera herramienta es entender tu negocio.</p>
+      <p data-i18n="about_p3">Creo en 3 cosas: código limpio, diseño que convierte, y entrega rápida. Si tu web tarda más de 3 segundos en cargar, ya perdiste una venta. Si no tiene un botón de WhatsApp visible, también.</p>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div>
+      <h1 data-i18n="contact_title">&gt; contacto --iniciar</h1>
+      <p data-i18n="contact_loading">Estableciendo conexión segura... [██████████] 100%</p>
+      <p>Usa: /<a href="https://wa.me/5547996831255" target="_blank" rel="noopener">whatsapp</a> /<a href="mailto:TU-EMAIL-AQUI@ejemplo.com">email</a> /<a href="https://github.com/ezequielCreator" target="_blank" rel="noopener">github</a></p>
+    </div>
+  </section>
+
+  <a href="https://wa.me/5547996831255" class="whatsapp-btn" target="_blank" rel="noopener" data-i18n="whatsapp_btn">CONTRATAR POR WHATSAPP</a>
+
+  <div class="lang-switcher">
+    <button onclick="setLang('es')" id="btn-es">🇦🇷 ES</button>
+    <button onclick="setLang('en')" id="btn-en">🇺🇸 EN</button>
+    <button onclick="setLang('pt')" id="btn-pt">🇧🇷 PT</button>
+  </div>
+
+  <noscript><style>#desktop, #skills, #about, #contacto { opacity: 1 !important; } .proyecto img { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <footer>&copy; <strong><em data-i18n="footer">Portafolio Dev.OS 2026. Todos los derechos reservados.</em></strong></footer>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    const translations = {
+      es: {
+        projects_title: "> Projects /",
+        skills_1: "Skills usadas: HTML5, CSS3, JavaScript ES6, Responsive Design, WhatsApp API, SEO.",
+        skills_2: "Skills usadas: HTML5, CSS3, JavaScript, Responsive Design, UI/UX, Vercel Deploy, SEO básico, WhatsApp integration, Performance Optimization.",
+        skills_3: "Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.",
+        skills_4: "Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.",
+        skills_5: "Skills usadas: HTML5, CSS3, JavaScript ES6, DOM Manipulation, LocalStorage, CRUD, Responsive Design, GitHub Pages, UI/UX.",
+        skills_title: "> skills --list",
+        about_title: "> about --me",
+        about_1: "Soy Ezequiel, DEV OS",
+        about_2: "Construyo webs que venden en piloto automático",
+        about_3: "Especialista en e-commerce",
+        about_p1: "Mi nombre es Ezequiel y llevo 1 año convirtiendo líneas de código en dinero real para negocios. No creo páginas web bonitas que nadie visita. Creo máquinas de ventas que trabajan 24/7.",
+        about_p2: "Mi especialidad es e-commerce y landings de alta conversión. He trabajado con marcas como Omega Moda Masculina y proyectos gastronómicos como Assadaõ & Marmitas, entre otros. Mi stack: HTML, CSS, JavaScript, React. Pero mi verdadera herramienta es entender tu negocio.",
+        about_p3: "Creo en 3 cosas: código limpio, diseño que convierte, y entrega rápida. Si tu web tarda más de 3 segundos en cargar, ya perdiste una venta. Si no tiene un botón de WhatsApp visible, también.",
+        contact_title: "> contacto --iniciar",
+        contact_loading: "Estableciendo conexión segura... [██████████] 100%",
+        whatsapp_btn: "CONTRATAR POR WHATSAPP",
+        footer: "Portafolio Dev.OS 2026. Todos los derechos reservados.",
+        typed: ["> Loading DEV_OS v1.0...^1000\n> User: EzequielCreator^1000\n> Password: ********^1000\n> Access granted.^1000\nWelcome. scroll for continue "]
+      },
+      en: {
+        projects_title: "> Projects /",
+        skills_1: "Skills used: HTML5, CSS3, JavaScript ES6, Responsive Design, WhatsApp API, SEO.",
+        skills_2: "Skills used: HTML5, CSS3, JavaScript, Responsive Design, UI/UX, Vercel Deploy, Basic SEO, WhatsApp integration, Performance Optimization.",
+        skills_3: "Skills used: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.",
+        skills_4: "Skills used: HTML5, CSS3, JavaScript ES6, Terminal UI, Dark theme, Responsive Design, Vercel Deploy, CSS Animation, GitHub Pages Ready.",
+        skills_5: "Skills used: HTML5, CSS3, JavaScript ES6, DOM Manipulation, LocalStorage, CRUD, Responsive Design, GitHub Pages, UI/UX.",
+        skills_title: "> skills --list",
+        about_title: "> about --me",
+        about_1: "I'm Ezequiel, DEV OS",
+        about_2: "I build websites that sell on autopilot",
+        about_3: "E-commerce specialist",
+        about_p1: "My name is Ezequiel and I've spent 1 year turning lines of code into real money for businesses. I don't build pretty websites nobody visits. I build sales machines that work 24/7.",
+        about_p2: "My specialty is e-commerce and high-conversion landing pages. I've worked with brands like Omega Moda Masculina and food projects like Assadaõ & Marmitas, among others. My stack: HTML, CSS, JavaScript, React. But my real tool is understanding your business.",
+        about_p3: "I believe in 3 things: clean code, design that converts, and fast delivery. If your website takes more than 3 seconds to load, you already lost a sale. If it doesn't have a visible WhatsApp button, same thing.",
+        contact_title: "> contact --start",
+        contact_loading: "Establishing secure connection... [██████████] 100%",
+        whatsapp_btn: "HIRE ON WHATSAPP",
+        footer: "Portfolio Dev.OS 2026. All rights reserved.",
+        typed: ["> Loading DEV_OS v1.0...^1000\n> User: EzequielCreator^1000\n> Password: ********^1000\n> Access granted.^1000\nWelcome. scroll to continue "]
+      },
+      pt: {
+        projects_title: "> Projetos /",
+        skills_1: "Skills usadas: HTML5, CSS3, JavaScript ES6, Responsive Design, WhatsApp API, SEO.",
+        skills_2: "Skills usadas: HTML5, CSS3, JavaScript, Responsive Design, UI/UX, Vercel Deploy, SEO básico, Integração com WhatsApp, Otimização de Performance.",
+        skills_3: "Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Tema escuro, Responsive Design, Vercel Deploy, Animação CSS, GitHub Pages Ready.",
+        skills_4: "Skills usadas: HTML5, CSS3, JavaScript ES6, Terminal UI, Tema escuro, Responsive Design, Vercel Deploy, Animação CSS, GitHub Pages Ready.",
+        skills_5: "Skills usadas: HTML5, CSS3, JavaScript ES6, Manipulação de DOM, LocalStorage, CRUD, Responsive Design, GitHub Pages, UI/UX.",
+        skills_title: "> skills --list",
+        about_title: "> sobre --mim",
+        about_1: "Sou Ezequiel, DEV OS",
+        about_2: "Construo sites que vendem no piloto automático",
+        about_3: "Especialista em e-commerce",
+        about_p1: "Meu nome é Ezequiel e há 1 ano transformo linhas de código em dinheiro real para negócios. Não crio sites bonitos que ninguém visita. Crio máquinas de vendas que trabalham 24/7.",
+        about_p2: "Minha especialidade é e-commerce e landing pages de alta conversão. Já trabalhei com marcas como Omega Moda Masculina e projetos gastronômicos como Assadaõ & Marmitas, entre outros. Minha stack: HTML, CSS, JavaScript, React. Mas minha verdadeira ferramenta é entender o seu negócio.",
+        about_p3: "Acredito em 3 coisas: código limpo, design que converte e entrega rápida. Se o seu site demora mais de 3 segundos para carregar, você já perdeu uma venda. Se não tem um botão de WhatsApp visível, também.",
+        contact_title: "> contato --iniciar",
+        contact_loading: "Estabelecendo conexão segura... [██████████] 100%",
+        whatsapp_btn: "CONTRATAR PELO WHATSAPP",
+        footer: "Portfólio Dev.OS 2026. Todos os direitos reservados.",
+        typed: ["> Carregando DEV_OS v1.0...^1000\n> Usuário: EzequielCreator^1000\n> Senha: ********^1000\n> Acesso concedido.^1000\nBem-vindo. role para continuar "]
+      }
+    };
+
+    let typedInstance = null;
+    function initTyped(lang) {
+      if (typedInstance) typedInstance.destroy();
+      document.getElementById('typed').textContent = '';
+      typedInstance = new Typed('#typed', {
+        strings: translations[lang].typed,
+        typeSpeed: 40, showCursor: true, cursorChar: '_'
+      });
+    }
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+      const btn = document.getElementById('btn-' + lang);
+      if (btn) btn.classList.add('active');
+      initTyped(lang);
+    }
+
+    // Idioma inicial: guardado > navegador > es
+    const saved = localStorage.getItem('lang');
+    const nav = navigator.language || 'es';
+    const initial = saved || (nav.startsWith('pt') ? 'pt' : nav.startsWith('en') ? 'en' : 'es');
+    setLang(initial);
+
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      ['#desktop', '#skills', '#about', '#contacto'].forEach(function (id) {
+        gsap.to(id, { opacity: 1, scrollTrigger: { trigger: id, start: 'top 80%' } });
+      });
+    }
+
+    var imgs = document.querySelectorAll('.proyecto img');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.2 });
+      imgs.forEach(function (img) { observer.observe(img); });
+    } else { imgs.forEach(function (img) { img.classList.add('visible'); }); }
+  </script>
+</body>
+</html>
